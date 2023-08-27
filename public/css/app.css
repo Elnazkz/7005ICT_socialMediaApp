@@ -1,0 +1,29 @@
+/* W3Schools */
+
+/* Styling for the navigation menu */
+.navigation {
+    background-color: #333333;
+    width: 270px;
+    height: 100%;
+    position: absolute;
+}
+
+.navigation li {
+    font-size: 20px;
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+
+/* Styling for the navigation menu links*/
+.navigation a {
+    text-decoration: none; /* no underlines*/
+    color: #ffffff;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+/* Styling for the navigation menu links when hovered on*/
+.navigation a:hover {
+    color: #4b9531;
+}
