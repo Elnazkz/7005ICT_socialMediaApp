@@ -14,14 +14,26 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::get('/home', function () {
-    return view('welcome');
+    return view('home');
+});
+
+Route::get('/post_details/{post_id}', function ($post_id) {
+    return view('post_details', ['post_id' => $post_id]);
 });
 
 Route::get('/users', function () {
-    return view('welcome');
+    return view('users');
+});
+
+Route::get('/user/{user_id}', function () {
+    return view('user');
+});
+
+Route::get('/about', function () {
+    return view('about');
 });
 

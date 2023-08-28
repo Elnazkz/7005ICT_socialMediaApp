@@ -1,5 +1,9 @@
 /* W3Schools */
 
+body {
+    /*background-image: url("../images/pic1.png");*/
+}
+
 /* Styling for the navigation menu */
 .navigation {
     background-color: #333333;
