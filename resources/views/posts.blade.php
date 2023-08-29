@@ -40,8 +40,8 @@
                         <td class="tg-row1-attr">user1</td>
                         <td class="tg-row1-attr">3</td>
                         <td class="tg-row1-attr">2</td>
-                        <td class="tg-row1-attr"><input class="tg-btn-row" type="submit" name="edit" value="Edit" /></td>
-                        <td class="tg-row1-attr"><input class="tg-btn-row" type="submit" name="del" value="Del" /></td>
+                        <td class="tg-row1-attr"><button class="tg-btn-row" onclick="window.location.href='/edit_post/110'">Edit</button> </td>
+                        <td class="tg-row1-attr"><button class="tg-btn-row" onclick="window.location.href='/del_post/110'">Del</button> </td>
                     </tr>
                     <tr>
                         <td class="tg-row2-attr">2023/08/28</td>
@@ -49,8 +49,8 @@
                         <td class="tg-row2-attr">user2</td>
                         <td class="tg-row2-attr">10</td>
                         <td class="tg-row2-attr">3</td>
-                        <td class="tg-row2-attr"><input class="tg-btn-row" type="submit" name="edit" value="Edit" /></td>
-                        <td class="tg-row2-attr"><input class="tg-btn-row" type="submit" name="del" value="Del" /></td>
+                        <td class="tg-row1-attr"><button class="tg-btn-row" onclick="window.location.href='/edit_post/120'">Edit</button> </td>
+                        <td class="tg-row1-attr"><button class="tg-btn-row" onclick="window.location.href='/del_post/120'">Del</button> </td>
                     </tr>
                     <tr>
                         <td class="tg-row1-attr">2023/08/28</td>
@@ -58,8 +58,8 @@
                         <td class="tg-row1-attr">user1</td>
                         <td class="tg-row1-attr">3</td>
                         <td class="tg-row1-attr">2</td>
-                        <td class="tg-row1-attr"><input class="tg-btn-row" type="submit" name="edit" value="Edit" /></td>
-                        <td class="tg-row1-attr"><input class="tg-btn-row" type="submit" name="del" value="Del" /></td>
+                        <td class="tg-row1-attr"><button class="tg-btn-row" onclick="window.location.href='/edit_post/130'">Edit</button> </td>
+                        <td class="tg-row1-attr"><button class="tg-btn-row" onclick="window.location.href='/del_post/130'">Del</button> </td>
                     </tr>
                     <tr>
                         <td class="tg-row2-attr">2023/08/28</td>
@@ -67,8 +67,8 @@
                         <td class="tg-row2-attr">user3</td>
                         <td class="tg-row2-attr">10</td>
                         <td class="tg-row2-attr">3</td>
-                        <td class="tg-row2-attr"><input class="tg-btn-row" type="submit" name="edit" value="Edit" /></td>
-                        <td class="tg-row2-attr"><input class="tg-btn-row" type="submit" name="del" value="Del" /></td>
+                        <td class="tg-row1-attr"><button class="tg-btn-row" onclick="window.location.href='/edit_post/140'">Edit</button> </td>
+                        <td class="tg-row1-attr"><button class="tg-btn-row" onclick="window.location.href='/del_post/140'">Del</button> </td>
                     </tr>
                     <tr>
                         <td class="tg-row1-attr">2023/08/28</td>
@@ -76,8 +76,8 @@
                         <td class="tg-row1-attr">user2</td>
                         <td class="tg-row1-attr">3</td>
                         <td class="tg-row1-attr">2</td>
-                        <td class="tg-row1-attr"><input class="tg-btn-row" type="submit" name="edit" value="Edit" /></td>
-                        <td class="tg-row1-attr"><input class="tg-btn-row" type="submit" name="del" value="Del" /></td>
+                        <td class="tg-row1-attr"><button class="tg-btn-row" onclick="window.location.href='/edit_post/150'">Edit</button> </td>
+                        <td class="tg-row1-attr"><button class="tg-btn-row" onclick="window.location.href='/del_post/150'">Del</button> </td>
                     </tr>
                     <tr>
                         <td class="tg-row2-attr">2023/08/28</td>
@@ -85,8 +85,8 @@
                         <td class="tg-row2-attr">user4</td>
                         <td class="tg-row2-attr">10</td>
                         <td class="tg-row2-attr">3</td>
-                        <td class="tg-row2-attr"><input class="tg-btn-row" type="submit" name="edit" value="Edit" /></td>
-                        <td class="tg-row2-attr"><input class="tg-btn-row" type="submit" name="del" value="Del" /></td>
+                        <td class="tg-row1-attr"><button class="tg-btn-row" onclick="window.location.href='/edit_post/160'">Edit</button> </td>
+                        <td class="tg-row1-attr"><button class="tg-btn-row" onclick="window.location.href='/del_post/160'">Del</button> </td>
                     </tr>
                 </tbody>
             </table>

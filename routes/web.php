@@ -21,8 +21,20 @@ Route::get('/posts', function () {
     return view('posts');
 });
 
+Route::get('/posts/{user_id}', function ($user_id) {
+    return view('user_posts', ['user_id' => $user_id]);
+});
+
 Route::get('/post_details/{post_id}', function ($post_id) {
     return view('post_details', ['post_id' => $post_id]);
+});
+
+Route::get('/edit_post/{post_id}', function ($post_id) {
+    return view('edit_post', ['post_id' => $post_id]);
+});
+
+Route::get('/del_post/{post_id}', function ($post_id) {
+    return view('del_post', ['post_id' => $post_id]);
 });
 
 Route::get('/users', function () {
