@@ -5,7 +5,6 @@
 @endsection
 
 @section('html_css')
-    <link rel="stylesheet" href="{{ asset('css/users_html.css') }}">
 @endsection
 
 @section('body')

@@ -1,33 +1,205 @@
-/* W3Schools */
+/*!* W3Schools *!*/
+
+/*body {*/
+/*    !*background-image: url("../images/pic1.png");*!*/
+/*}*/
+
+/*!* Styling for the navigation menu *!*/
+/*.navigation {*/
+/*    background-color: #333333;*/
+/*    width: 270px;*/
+/*    height: 100%;*/
+/*    position: absolute;*/
+/*}*/
+
+/*.navigation li {*/
+/*    font-size: 20px;*/
+/*    list-style: none;*/
+/*    margin-bottom: 20px;*/
+/*}*/
+
+
+/*!* Styling for the navigation menu links*!*/
+/*.navigation a {*/
+/*    text-decoration: none; !* no underlines*!*/
+/*    color: #ffffff;*/
+/*    font-size: 20px;*/
+/*    transition: 0.3s;*/
+/*}*/
+
+/*!* Styling for the navigation menu links when hovered on*!*/
+/*.navigation a:hover {*/
+/*    color: #4b9531;*/
+/*}*/
 
 body {
-    /*background-image: url("../images/pic1.png");*/
+    font-size: 100%;
+    max-width: 900px;
+    margin: auto;
+    background-color: #78ecec;
+    font-family:Helvetica Neue, Helvetica, sans-serif;
 }
 
-/* Styling for the navigation menu */
-.navigation {
-    background-color: #333333;
-    width: 270px;
-    height: 100%;
-    position: absolute;
+#main_title {
+    background-color: #58afaf;
+    margin: 0px;
+    font-style: italic;
 }
 
-.navigation li {
-    font-size: 20px;
-    list-style: none;
-    margin-bottom: 20px;
+#main_title p {
+    padding: 20px;
+    text-align: center;
+    font-size: 2.5em;
 }
 
-
-/* Styling for the navigation menu links*/
-.navigation a {
-    text-decoration: none; /* no underlines*/
-    color: #ffffff;
-    font-size: 20px;
-    transition: 0.3s;
+nav.skew-menu{
+    text-align:right;
+    margin-top:0px;
 }
 
-/* Styling for the navigation menu links when hovered on*/
-.navigation a:hover {
-    color: #4b9531;
+nav.skew-menu > ul{
+    display:inline-block;
+    margin:0;
+    padding:0;
+    list-style:none;
+    transform:skew(-25deg);
+}
+
+nav.skew-menu > ul > li {
+    background: #fff;
+    float: left;
+    border-right: 2px solid #eee;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    color: #555;
+    font-weight: bolder;
+    transition: all 0.3s linear;
+}
+
+nav.skew-menu > ul > li:first-child {
+    border-radius: 7px 0 0 7px;
+}
+
+nav.skew-menu > ul > li:last-child {
+    border-right: none;
+    border-radius: 0 7px 7px 0;
+}
+
+nav.skew-menu > ul > li:hover {
+    background: #eee;
+    color: tomato;
+}
+
+nav.skew-menu > ul > li > a {
+    display:block;
+    padding:1em 2em;
+    color:inherit;
+    text-decoration:none;
+    transform:skew(25deg);
+}
+
+.tg {
+    border: 1px solid #b3adad;
+    border-collapse:separate;
+    padding: 1px;
+    width: 100%;
+    height: 200px;
+}
+
+.posts-title-table {
+    width: 100%;
+}
+
+.posts-title-row {
+    width: 100%;
+}
+
+.posts-title-col1 {
+    width: 90%;
+}
+
+.posts-title-col2 {
+    width: 10%;
+    text-align: right;
+}
+
+.tg .tg-col-date {
+    width: 10%;
+}
+
+.tg .tg-col-title {
+    width: 40%;
+}
+
+.tg .tg-col-author {
+    width: 25%
+}
+
+.tg .tg-col-comments {
+    width: 7%;
+}
+
+.tg .tg-col-likes {
+    width: 6%;
+}
+
+.tg .tg-col-edit {
+    width: 6%;
+}
+
+.tg .tg-col-del {
+    width: 6%;
+}
+
+.tg th {
+    border: 1px solid #b3adad;
+    padding:5px;
+    background-color:#b9c9fe;
+    color:#039;
+    font-family:Arial,
+    sans-serif;
+    font-size:14px;
+    font-weight:normal;
+}
+
+.tg td {
+    border: 1px solid #b3adad;
+    text-align: left;
+    padding:5px;
+    background-color:#e8edff;
+    color:#669;
+    font-family:Arial, sans-serif;
+    font-size:14px;
+}
+
+.tg .tg-hd-attr {
+    text-align: center;
+    top: -1px;
+    vertical-align: center;
+    will-change: transform
+}
+
+.tg .tg-row1-attr {
+    background-color: #D2E4FC;
+    text-align: left;
+    vertical-align: center
+}
+
+.tg .tg-row2-attr{
+    text-align:left;
+    vertical-align:center;
+}
+
+@media screen and (max-width: 767px) {
+    .tg {
+        width: auto !important;
+    }
+    .tg col {
+        width: auto !important;
+    }
+    .tg-wrap {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: auto 0px;
+    }
 }
