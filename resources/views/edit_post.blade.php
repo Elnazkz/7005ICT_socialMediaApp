@@ -11,11 +11,17 @@
 @section('body')
     <div class="top-div">
         <h2>Edit Post</h2><span>Post Id = {{ $post_id }}</span>
-        <div class="post-list">
+
+        <form>
             <div class="post-box">
-                <p class="post-content">post title</p>
-                <p class="post-content">some text as the post message 1</p>
+                <label for="post_title">Post Title</label><br>
+                <input type="text" id="post_title" name="post_title" value="post title 1"><br><br>
+                <label for="post_message">Post Message</label><br>
+                <input type="text" id="post_message" name="post_message" value="some text as the post message 1"><br><br>
+                <input type="submit" value="Apply">
+                <input type="submit" value="Cancel">
             </div>
-        </div>
+        </form>
+
     </div>
 @endsection

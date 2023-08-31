@@ -1,4 +1,18 @@
+.prepend-10px {
+    margin: 0 0 0 10px;
+}
 
+.prepend-20px {
+    margin: 0 0 0 20px;
+}
+
+.append-10px {
+    margin: 0 10px 0 0;
+}
+
+.append-20px {
+    margin: 0 20px 0 0;
+}
 
 .post-list {
     display: flex;
@@ -8,33 +22,12 @@
 }
 
 .post-box {
+    margin: 0 auto 10px;
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     width: 90%;
     padding: 20px;
-    margin: 20px 5px 10px 30px;
-}
-
-.post-box-title * {
-    display: inline-block;
-}
-
-.post-title {
-    margin: 10px;
-    font-size: 20px;
-}
-
-.post-date {
-    margin: 10px;
-}
-
-.post-author {
-    margin: 10px;
-}
-
-.post-content {
-    margin: 10px;
 }
 
 .comment-list {
@@ -46,80 +39,15 @@
 }
 
 .comment-box {
+    margin: 5px auto 0 auto;
     background-color: #666;
     color: antiquewhite;
     border-radius: 5px;
     width: 90%;
     padding: 20px;
-    margin-bottom: 5px;
+    border: 2px solid black;
 }
 
 .comment-box p {
     margin-left: 40px;
-}
-
-.comment-box input, h2, label {
-    display: inline-block;
-}
-
-.accordion {
-    margin-bottom: 5px;
-    max-width: 65em;
-}
-
-.accordion > input[type="checkbox"] {
-    position: absolute;
-    left: -100vw;
-}
-
-.accordion .content {
-    overflow-y: hidden;
-    height: 0;
-    transition: height 0.3s ease;
-    border-bottom: 10px;
-}
-
-.accordion > input[type="checkbox"]:checked ~ .content {
-    height: auto;
-    overflow: visible;
-    padding: 15px;
-    border: 1px solid #666;
-    border-top: 0;
-}
-
-.accordion label {
-    display: block;
-    color: antiquewhite;
-    cursor: pointer;
-    font-weight: normal;
-    padding: 15px;
-    background: #666;
-}
-
-.accordion .handle {
-    margin: 0;
-    font-size: 1.125em;
-    line-height: 1.2em;
-}
-
-.accordion label:hover,
-.accordion label:focus {
-    background: #666;
-}
-
-.accordion .handle label:before {
-    content: url('../images/chevron_right.png');
-    display: inline-block;
-    margin-right: 10px;
-    font-size: .58em;
-    line-height: 1.556em;
-    vertical-align: middle;
-}
-
-.accordion > input[type="checkbox"]:checked ~ .handle label:before {
-    content: url('../images/expand_less.png');
-}
-
-.accordion p:last-child {
-    margin-bottom: 0;
 }
