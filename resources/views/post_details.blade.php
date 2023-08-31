@@ -19,7 +19,6 @@
                     <span><h2>Post Title 1</h2></span>
                     <span>No of comments: 2</span>
                     <span><input type="button" value="Reply"/></span>
-                    <span><input type="button" value="Edit"/></span>
                 </div>
                 <p>Posted on: 2023/08/29</p>
                 <p>Author: Author 1</p>
@@ -31,7 +30,6 @@
                     <summary role="button" aria-expanded="false" tabindex="0">
                         <span>No of Comments: 2</span>
                         <input type="button" value="Reply"/>
-                        <span><input type="button" value="Edit"/></span>
                     </summary>
                     <p>Commented on: 2023/08/29</p>
                     <p>Author: Author 2</p>
@@ -42,7 +40,6 @@
                             <summary role="button" aria-expanded="false" tabindex="0">
                                 <span>No of Comments: 2</span>
                                 <input type="button" value="Reply"/>
-                                <span><input type="button" value="Edit"/></span>
                             </summary>
                             <p>Commented on: 2023/08/29</p>
                             <p>Author: Author 2</p>
@@ -53,7 +50,6 @@
                                     <summary role="button" aria-expanded="false" tabindex="0">
                                         <span>No of Comments: 0</span>
                                         <input type="button" value="Reply"/>
-                                        <span><input type="button" value="Edit"/></span>
                                     </summary>
                                     <p>Commented on: 2023/08/29</p>
                                     <p>Author: Author 2</p>
@@ -66,7 +62,6 @@
                                     <summary role="button" aria-expanded="false" tabindex="0">
                                         <span>No of Comments: 0</span>
                                         <input type="button" value="Reply"/>
-                                        <span><input type="button" value="Edit"/></span>
                                     </summary>
                                     <p>Commented on: 2023/08/29</p>
                                     <p>Author: Author 2</p>
@@ -82,7 +77,6 @@
                             <summary role="button" aria-expanded="false" tabindex="0">
                                 <span>No of Comments: 0</span>
                                 <input type="button" value="Reply"/>
-                                <span><input type="button" value="Edit"/></span>
                             </summary>
                             <p>Commented on: 2023/08/29</p>
                             <p>Author: Author 2</p>
@@ -98,7 +92,6 @@
                     <summary role="button" aria-expanded="false" tabindex="0" >
                         <span>No of Comments: 0</span>
                         <input type="button" value="Reply">
-                        <span><input type="button" value="Edit"/></span>
                     </summary>
                     <p>Commented on: 2023/08/29</p>
                     <p>Author: Author 2</p>
