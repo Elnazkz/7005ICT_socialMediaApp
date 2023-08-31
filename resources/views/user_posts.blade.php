@@ -14,14 +14,22 @@
         <p>User Id: {{ $user_id }}</p>
 
         <div class="post-list">
-            <div class="post-box">
-                @if($user_id == '3000')
+            @if($user_id == '3000')
+                <div class="post-box">
                     <h2 class="post-title"><a href="{{ url('/post_details/110') }}">Post Title 1</a></h2>
-                @elseif($user_id == '3010')
+                    <span>No of Comments: 2</span>
+                </div>
+                <div class="post-box">
+                    <h2 class="post-title"><a href="{{ url('/post_details/130') }}">Post Title 3</a></h2>
+                    <span>No of Comments: 1</span>
+                </div>
+            @elseif($user_id == '3010')
+                <div class="post-box">
                     <h2 class="post-title"><a href="{{ url('/post_details/120') }}">Post Title 2</a></h2>
-                @else
-                @endif
-            </div>
+                    <span>No of Comments: 1</span>
+                </div>
+            @else
+            @endif
         </div>
     </div>
 @endsection
