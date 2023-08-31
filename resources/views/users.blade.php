@@ -14,10 +14,12 @@
 
         <div class="post-list">
             <div class="post-box">
-                <h2 class="post-title"><a href="{{ url('/posts/3000') }}">user 1</a></h2>
+                <span><h2 class="post-title"><a href="{{ url('/posts/3000') }}">user 1</a></h2></span>
+                <span>No of Posts: 1</span>
             </div>
             <div class="post-box">
-                <h2 class="post-title"><a href="{{ url('/posts/3010') }}">user 2</a></h2>
+                <span><h2 class="post-title"><a href="{{ url('/posts/3010') }}">user 2</a></h2></span>
+                <span>No of Posts: 1</span>
             </div>
             <!-- Add more post-box elements as needed -->
         </div>
