@@ -37,6 +37,10 @@ Route::get('/del_post/{post_id}', function ($post_id) {
     return view('del_post', ['post_id' => $post_id]);
 });
 
+Route::get('/edit_comment/{comment_id}', function ($comment_id) {
+    return view('edit_comment', ['comment_id' => $comment_id]);
+});
+
 Route::get('/users', function () {
     return view('users');
 });
