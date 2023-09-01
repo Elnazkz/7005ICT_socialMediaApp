@@ -17,7 +17,6 @@
             <div class="post-box">
                 <div>
                     <span><h2>Post Title 1</h2></span>
-                    <span>No of comments: 2</span>
                     <span><input type="button" value="Reply"/></span>
                     <span><input type="button" value="Edit" onclick="window.location.href='/edit_post/110'"/></span>
                 </div>
@@ -29,64 +28,26 @@
             <div class="comment-box">
                 <details>
                     <summary role="button" aria-expanded="false" tabindex="0">
-                        <span>No of Comments: 2</span>
+                        <span>some text as the post message 2 (1 reply)</span>
+                        <p>Commented on: 2023/08/29</p>
+                        <p>Author: Author 2</p>
+
                         <input type="button" value="Reply"/>
                         <span><input type="button" value="Edit" onclick="window.location.href='/edit_comment/3000'"/></span>
                     </summary>
-                    <p>Commented on: 2023/08/29</p>
-                    <p>Author: Author 2</p>
-                    <p>some text as the post message 2</p>
+
+
 
                     <div class="comment-box">
                         <details>
                             <summary role="button" aria-expanded="false" tabindex="0">
-                                <span>No of Comments: 2</span>
+                                <span>some text as the post message 2</span>
+                                <p>Commented on: 2023/08/29</p>
+                                <p>Author: Author 2</p>
+
                                 <input type="button" value="Reply"/>
                                 <span><input type="button" value="Edit" onclick="window.location.href='/edit_comment/3000'"/></span>
                             </summary>
-                            <p>Commented on: 2023/08/29</p>
-                            <p>Author: Author 2</p>
-                            <p>some text as the post message 2</p>
-
-                            <div class="comment-box">
-                                <details>
-                                    <summary role="button" aria-expanded="false" tabindex="0">
-                                        <span>No of Comments: 0</span>
-                                        <input type="button" value="Reply"/>
-                                        <span><input type="button" value="Edit" onclick="window.location.href='/edit_comment/3000'"/></span>
-                                    </summary>
-                                    <p>Commented on: 2023/08/29</p>
-                                    <p>Author: Author 2</p>
-                                    <p>some text as the post message 2</p>
-                                </details>
-                            </div>
-
-                            <div class="comment-box">
-                                <details>
-                                    <summary role="button" aria-expanded="false" tabindex="0">
-                                        <span>No of Comments: 0</span>
-                                        <input type="button" value="Reply"/>
-                                        <span><input type="button" value="Edit" onclick="window.location.href='/edit_comment/3000'"/></span>
-                                    </summary>
-                                    <p>Commented on: 2023/08/29</p>
-                                    <p>Author: Author 2</p>
-                                    <p>some text as the post message 2</p>
-                                </details>
-                            </div>
-
-                        </details>
-                    </div>
-
-                    <div class="comment-box">
-                        <details>
-                            <summary role="button" aria-expanded="false" tabindex="0">
-                                <span>No of Comments: 0</span>
-                                <input type="button" value="Reply"/>
-                                <span><input type="button" value="Edit" onclick="window.location.href='/edit_comment/3000'"/></span>
-                            </summary>
-                            <p>Commented on: 2023/08/29</p>
-                            <p>Author: Author 2</p>
-                            <p>some text as the post message 2</p>
                         </details>
                     </div>
 
@@ -96,13 +57,14 @@
             <div class="comment-box">
                 <details>
                     <summary role="button" aria-expanded="false" tabindex="0" >
-                        <span>No of Comments: 0</span>
+                        <span>some text as the post message 2</span>
+                        <p>Commented on: 2023/08/29</p>
+                        <p>Author: Author 2</p>
+
                         <input type="button" value="Reply">
                         <span><input type="button" value="Edit" onclick="window.location.href='/edit_comment/3000'"/></span>
                     </summary>
-                    <p>Commented on: 2023/08/29</p>
-                    <p>Author: Author 2</p>
-                    <p>some text as the post message 2</p>
+
                 </details>
             </div>
 
