@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,32 +14,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/posts/create', [PostController::class, 'create']);
 
-Route::get('/posts', function () {
-    return view('posts');
-});
+Route::post('/create_post', [PostController::class, 'store']);
 
 Route::get('/posts/{user_id}', function ($user_id) {
-    return view('user_posts', ['user_id' => $user_id]);
+    return view('posts.user_posts', ['user_id' => $user_id]);
 });
 
 Route::get('/post_details/{post_id}', function ($post_id) {
-    return view('post_details', ['post_id' => $post_id]);
+    return view('posts.post_details', ['post_id' => $post_id]);
 });
 
 Route::get('/edit_post/{post_id}', function ($post_id) {
-    return view('edit_post', ['post_id' => $post_id]);
+    return view('posts.edit_post', ['post_id' => $post_id]);
 });
 
 Route::get('/del_post/{post_id}', function ($post_id) {
-    return view('del_post', ['post_id' => $post_id]);
+    return view('posts.del_post', ['post_id' => $post_id]);
 });
 
 Route::get('/edit_comment/{comment_id}', function ($comment_id) {
-    return view('edit_comment', ['comment_id' => $comment_id]);
+    return view('posts.edit_comment', ['comment_id' => $comment_id]);
 });
 
 Route::get('/users', function () {
@@ -49,3 +46,4 @@ Route::get('/about', function () {
     return view('about');
 });
 
+Route::get('/', [PostController::class, 'index']);

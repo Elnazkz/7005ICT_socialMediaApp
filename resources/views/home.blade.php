@@ -11,16 +11,20 @@
 @section('body')
     <div>
         <h2>Home</h2>
+        <a href="{{ url('posts/create') }}">Create</a>
         <div class="post-list">
-            <div class="post-box">
-                <h2 class="post-title"><a href="{{ url('/post_details/110') }}">Post Title 1</a></h2>
-                <p class="post-author">Author 1</p>
-            </div>
-            <div class="post-box">
-                <h2 class="post-title"><a href="{{ url('/post_details/120') }}">Post Title 2</a></h2>
-                <p class="post-author">Author 2</p>
-            </div>
-            <!-- Add more post-box elements as needed -->
+            @if (!empty($posts) && isset($posts))
+                @forelse($posts as $post)
+                    <div class="post-box">
+                        <h2 class="post-title"><a href="{{ url('/post_details/' . $post->id) }}">{{ $post->title }}</a></h2>
+                        <p class="post-author">{{ $post->name }}</p>
+                    </div>
+                @empty
+                    <h2>No post defined yet !</h2>
+                @endforelse
+            @else
+                <h2>No post defined yet !</h2>
+            @endif
         </div>
     </div>
 @endsection

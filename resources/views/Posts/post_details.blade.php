@@ -18,7 +18,7 @@
                 <div>
                     <span><h2>Post Title 1</h2></span>
                     <span><input type="button" value="Reply"/></span>
-                    <span><input type="button" value="Edit" onclick="window.location.href='/edit_post/110'"/></span>
+                    <span><a href="/edit_post/110"><button>Edit</button></a></span>
                 </div>
                 <p>Posted on: 2023/08/29</p>
                 <p>Author: Author 1</p>
@@ -33,10 +33,8 @@
                         <p>Author: Author 2</p>
 
                         <input type="button" value="Reply"/>
-                        <span><input type="button" value="Edit" onclick="window.location.href='/edit_comment/3000'"/></span>
+                        <span><a href="/edit_comment/3000"><button>Edit</button></a></span>
                     </summary>
-
-
 
                     <div class="comment-box">
                         <details>
@@ -46,7 +44,7 @@
                                 <p>Author: Author 2</p>
 
                                 <input type="button" value="Reply"/>
-                                <span><input type="button" value="Edit" onclick="window.location.href='/edit_comment/3000'"/></span>
+                                <span><a href="/edit_comment/3010"><button>Edit</button></a></span>
                             </summary>
                         </details>
                     </div>
@@ -62,7 +60,7 @@
                         <p>Author: Author 2</p>
 
                         <input type="button" value="Reply">
-                        <span><input type="button" value="Edit" onclick="window.location.href='/edit_comment/3000'"/></span>
+                        <span><a href="/edit_comment/3020"><button>Edit</button></a></span>
                     </summary>
 
                 </details>
