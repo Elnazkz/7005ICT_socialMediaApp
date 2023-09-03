@@ -14,6 +14,17 @@
 
         <form action="{{ url('create_post') }}" method="post">
             @csrf
+
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
             <div style="margin-bottom: 10px;">
                 <label for="user_name">User Name:</label><br>
                 <input type="text" id="user_name" name="user_name" class="@error('user_name') is-invalid @enderror" value="{{ old('user_name') }}">

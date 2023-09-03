@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\Helpers;
 use App\Models\MyUser;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
-//use App\Http\Requests\StorePostRequest;
-//use App\Http\Requests\UpdatePostRequest;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\MessageBag;
+use Illuminate\Support\ViewErrorBag;
 
 class PostController extends Controller
 {
@@ -17,8 +18,10 @@ class PostController extends Controller
      */
     public function index()
     {
-        //$posts = Post::all();
-        $posts = DB::select('select p.id, p.title, u.name from posts as p, my_users as u where p.user_id = u.id');
+        $posts = DB::select(
+            'select p.id, p.title, u.name ' .
+            'from posts as p, my_users as u ' .
+            'where p.user_id = u.id');
         return view ('home', ['posts' => $posts]);
     }
 
@@ -36,11 +39,22 @@ class PostController extends Controller
     //public function store(StorePostRequest $request)
     public function store(Request $request)
     {
-        $request->validate([
+//        $request->validate([
+//            'user_name' => 'required|alpha|min:3',
+//            'title' => 'required|min:3',
+//            'message' => 'required'
+//        ]);
+
+        $res = Helpers::make_validation([
             'user_name' => 'required|alpha',
             'title' => 'required|min:3',
-            'message' => 'required'
+            'message' => 'required|words:5'
         ]);
+        if (count($res) !== 0) {
+            //return redirect('posts/create')->withErrors($res)->withInput();
+            return back()->withInput()->withErrors($res);
+        }
+
         $post = new Post();
         $post->title = trim($request->title);
         $post->message = $request->message;
@@ -78,7 +92,7 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatePostRequest $request, Post $post)
+    public function update(Request $request, Post $post)
     {
         //
     }
