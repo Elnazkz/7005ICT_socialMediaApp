@@ -31,7 +31,7 @@
                             <summary role="button" aria-expanded="false" tabindex="0">
                                 <span>{{ $comment->message }}</span>
                                 <p>Commented on: {{ $comment->date }}</p>
-                                <p>Author: {{  }}</p>
+                                <p>Author: {{ $comment->name }}</p>
 
                                 <input type="button" value="Reply"/>
                                 <span><a href="/edit_comment/"{{$comment->id}}><button>Edit</button></a></span>

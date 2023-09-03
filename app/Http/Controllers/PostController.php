@@ -92,7 +92,7 @@ class PostController extends Controller
         $authors = DB::select("select * from users where id = '" . $post->userId ."'");
         $author = $authors[0] ;
 
-        $comments = DB::select("select * from comments where postId = '" . $postId . "'");
+        $comments = DB::select("select * from comments as c, users as u where c.userId = u.id and postId = '" . $postId . "'");
 
         return view("posts.post_details", ['post' => $post, 'user' => $author, 'comments' => $comments]);
     }
