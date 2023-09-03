@@ -4,9 +4,6 @@
     Users
 @endsection
 
-@section('html_css')
-    <link rel="stylesheet" href="{{ asset('css/home_html.css') }}">
-@endsection
 
 @section('body')
     <div>

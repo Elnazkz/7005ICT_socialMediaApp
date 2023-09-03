@@ -4,14 +4,11 @@
     Home
 @endsection
 
-@section('html_css')
-    <link rel="stylesheet" href="{{ asset('css/home_html.css') }}">
-@endsection
-
 @section('body')
     <div>
         <h2>Home</h2>
-        <a href="{{ url('posts/create') }}">Create</a>
+        <a class="button" href="{{ url('posts/create') }}">Create</a>
+
         <div class="post-list">
             @if (!empty($posts) && isset($posts))
                 @forelse($posts as $post)

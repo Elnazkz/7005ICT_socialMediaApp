@@ -4,10 +4,6 @@
     User Posts
 @endsection
 
-@section('html_css')
-    <link rel="stylesheet" href="{{ asset('css/home_html.css') }}">
-@endsection
-
 @section('body')
     <div class="top_div">
         <h2>User Posts</h2>

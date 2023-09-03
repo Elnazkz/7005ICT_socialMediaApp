@@ -1,36 +1,3 @@
-/*!* W3Schools *!*/
-
-/*body {*/
-/*    !*background-image: url("../images/pic1.png");*!*/
-/*}*/
-
-/*!* Styling for the navigation menu *!*/
-/*.navigation {*/
-/*    background-color: #333333;*/
-/*    width: 270px;*/
-/*    height: 100%;*/
-/*    position: absolute;*/
-/*}*/
-
-/*.navigation li {*/
-/*    font-size: 20px;*/
-/*    list-style: none;*/
-/*    margin-bottom: 20px;*/
-/*}*/
-
-
-/*!* Styling for the navigation menu links*!*/
-/*.navigation a {*/
-/*    text-decoration: none; !* no underlines*!*/
-/*    color: #ffffff;*/
-/*    font-size: 20px;*/
-/*    transition: 0.3s;*/
-/*}*/
-
-/*!* Styling for the navigation menu links when hovered on*!*/
-/*.navigation a:hover {*/
-/*    color: #4b9531;*/
-/*}*/
 
 body {
     font-size: 100%;
@@ -202,4 +169,77 @@ nav.skew-menu > ul > li > a {
         -webkit-overflow-scrolling: touch;
         margin: auto 0px;
     }
+}
+
+a {
+    color: black;
+}
+
+.prepend-10px {
+    margin: 0 0 0 10px;
+}
+
+.prepend-20px {
+    margin: 0 0 0 20px;
+}
+
+.append-10px {
+    margin: 0 10px 0 0;
+}
+
+.append-20px {
+    margin: 0 20px 0 0;
+}
+
+.post-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.post-box {
+    margin: 0 auto 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    padding: 20px;
+}
+
+.comment-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0 10px 0 40px;
+}
+
+.comment-box {
+    margin: 5px auto 0 auto;
+    background-color: #666;
+    color: antiquewhite;
+    border-radius: 5px;
+    width: 90%;
+    padding: 20px;
+    border: 2px solid black;
+}
+
+.comment-box p {
+    margin-left: 40px;
+}
+
+/* Basic button styling */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #1f6464;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+    margin-bottom: 10px;
 }

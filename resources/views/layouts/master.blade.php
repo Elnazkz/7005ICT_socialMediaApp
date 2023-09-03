@@ -14,7 +14,6 @@
 <nav class="skew-menu">
     <ul>
         <li><a href="{{ url('/') }}">Home</a></li>
-        <li><a href="{{ url('posts') }}">Posts</a></li>
         <li><a href="{{ url('users') }}">Users</a></li>
         <li><a href="{{ url('about') }}">About</a></li>
     </ul>

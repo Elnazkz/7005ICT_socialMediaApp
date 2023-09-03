@@ -13,6 +13,7 @@ use App\Http\Controllers\PostController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/', [PostController::class, 'index']);
 
 Route::get('/posts/create', [PostController::class, 'create']);
 
@@ -22,9 +23,7 @@ Route::get('/posts/{user_id}', function ($user_id) {
     return view('posts.user_posts', ['user_id' => $user_id]);
 });
 
-Route::get('/post_details/{post_id}', function ($post_id) {
-    return view('posts.post_details', ['post_id' => $post_id]);
-});
+Route::get('/post_details/{post_id}', [PostController::class, 'show']);
 
 Route::get('/edit_post/{post_id}', function ($post_id) {
     return view('posts.edit_post', ['post_id' => $post_id]);
@@ -46,4 +45,3 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/', [PostController::class, 'index']);

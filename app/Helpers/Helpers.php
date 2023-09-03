@@ -5,23 +5,25 @@ namespace App\Helpers;
 use Illuminate\Http\Request;
 use Illuminate\Support\MessageBag;
 
+// Helper class to do validations on the requests
+// This class has been created to work like laravel validation itself
 class Helpers {
     /**
      * @throws \Exception
      */
     public static function make_validation(array $fields) : array {
         $ret_val = [];
-        if (!isset($_POST))
-            throw new \Exception("$_POST is not defined !");
+//        if (!isset($_POST))
+//            throw new \Exception("$_POST is not defined !");
 
         foreach ($fields as $field_name => $rule_str) {
             $rules = explode('|', $rule_str);
             foreach ($rules as $rule) {
                 $rule = trim($rule);
 
-                if ((!isset($_POST[$field_name])) || ($_POST[$field_name]) === null)
-                    throw new \Exception("Bad " . $field_name . " is not defined !");
-                else
+//                if ((!isset($_POST[$field_name])) || ($_POST[$field_name]) === null)
+//                    throw new \Exception("Bad " . $field_name . " is not defined !");
+//                else
                     $fld = trim($_POST[$field_name]);
 
                 if ($rule == 'required') {
@@ -47,7 +49,7 @@ class Helpers {
                     }
                 } else if (self::starts_with('alpha', $rule)) {
                     if (!ctype_alpha($fld)) {
-                        $ret_val[$field_name] = $field_name . ' must be all alpha.';
+                        $ret_val[$field_name] = $field_name . ' must be all numbers.';
                         break;
                     }
                 } else {

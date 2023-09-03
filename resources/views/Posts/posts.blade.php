@@ -4,8 +4,6 @@
     Posts
 @endsection
 
-@section('html_css')
-@endsection
 
 @section('body')
     <div class="posts-table">
