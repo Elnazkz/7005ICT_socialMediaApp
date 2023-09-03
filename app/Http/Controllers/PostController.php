@@ -55,21 +55,39 @@ class PostController extends Controller
             return back()->withInput()->withErrors($res);
         }
 
-        $post = new Post();
-        $post->title = trim($request->title);
-        $post->message = $request->message;
+//        $post = new Post();
+//        $post->title = trim($request->title);
+//        $post->message = $request->message;
+//        $user_name = trim($request->user_name);
+//        $user = DB::select("select * from my_users where name = '" . $user_name . "'");
+//
+//        if ($user != null) {
+//            $post->user_id = $user[0]->id;
+//        } else {
+//            $my_user = new MyUser();
+//            $my_user->name = $user_name;
+//            $my_user->save();
+//            $post->user_id = $my_user->id;
+//        }
+//        $post->save();
+//        return redirect('/');
+        $title = trim($request->title);
+        $message = $request->message;
         $user_name = trim($request->user_name);
         $user = DB::select("select * from my_users where name = '" . $user_name . "'");
-
         if ($user != null) {
-            $post->user_id = $user[0]->id;
+            $user_id = $user[0]->id;
         } else {
-            $my_user = new MyUser();
-            $my_user->name = $user_name;
-            $my_user->save();
-            $post->user_id = $my_user->id;
+            $now = date('Y-m-d H:i:s');
+            $sql = "insert into my_users (name, created_at, updated_at) values ('" . $user_name . "', '" . $now . "', '" . $now . "')";
+            DB::select($sql);
+            $user = DB::select("select * from my_users where name = '" . $user_name . "'");
+            $user_id = $user[0]->id;
         }
-        $post->save();
+        $now = date('Y-m-d H:i:s');
+        $sql = "insert into posts (title, message, user_id, created_at, updated_at) values ('" . $title . "', '" . $message . "', '" . $user_id . "', '" . $now . "', '" . $now . "')";
+        $post = DB::select($sql);
+
         return redirect('/');
     }
 
