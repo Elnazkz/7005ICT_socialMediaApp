@@ -3,6 +3,7 @@
 use App\Http\Controllers\CommentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use \App\Http\Controllers\MyUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +20,7 @@ Route::get('/', [PostController::class, 'index']);
 Route::get('/posts/create', [PostController::class, 'create']);
 Route::post('/create_post', [PostController::class, 'store']);
 
-Route::get('/posts/{user_id}', function ($user_id) {
-    return view('posts.user_posts', ['user_id' => $user_id]);
-});
+Route::get('/posts/{user_id}', [MyUserController::class, 'show']);
 
 Route::get('/post_details/{post_id}', [PostController::class, 'show']);
 
@@ -41,9 +40,7 @@ Route::get('/edit_comment/{comment_id}', function ($comment_id) {
     return view('posts.edit_comment', ['comment_id' => $comment_id]);
 });
 
-Route::get('/users', function () {
-    return view('users');
-});
+Route::get('/users', [MyUserController::class, 'index']);
 
 Route::get('/about', function () {
     return view('about');

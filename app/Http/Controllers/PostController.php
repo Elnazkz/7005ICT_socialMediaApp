@@ -85,9 +85,6 @@ class PostController extends Controller
         $authors = DB::select($sql, array($post->userId));
         $author = $authors[0] ;
 
-//        $sql = "select * from Comments as c, users as u where c.userId = u.id and postId = ?";
-//        $comments = DB::select($sql, array($postId));
-
         $comments = CommentController::parent_comments($postId);
 
         return view("posts.post_details", ['post' => $post, 'user' => $author, 'parentComments' => $comments]);
