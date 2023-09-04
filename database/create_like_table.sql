@@ -4,8 +4,8 @@ create table Likes (
     id integer not null primary key autoincrement,
     postId integer,
     userId integer,
-    FOREIGN KEY (postId) REFERENCES Post(id),
-    FOREIGN KEY (userId) REFERENCES User(id)
+    FOREIGN KEY (postId) REFERENCES Posts(id),
+    FOREIGN KEY (userId) REFERENCES Users(id)
 );
 
 insert into Likes (postId, userId) VALUES (1, 2);

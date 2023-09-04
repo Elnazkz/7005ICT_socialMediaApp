@@ -35,16 +35,10 @@ class PostController extends Controller
 
     /**
      * Store a newly created resource in storage.
+     * @throws \Exception
      */
-    //public function store(StorePostRequest $request)
     public function store(Request $request)
     {
-//        $request->validate([
-//            'user_name' => 'required|alpha|min:3',
-//            'title' => 'required|min:3',
-//            'message' => 'required'
-//        ]);
-
         // The validation rules are set here and checked on the post variables
         $res = Helpers::make_validation([
             'user_name' => 'required|alpha',
@@ -63,19 +57,17 @@ class PostController extends Controller
         $user_name = trim($request->user_name);
 
         // check the user table for the username, if not exist then create the user
-        $user = DB::select("select * from users where name = '" . $user_name . "'");
+        $user = DB::select("select * from Users where name = ?", array($user_name));
 
-        if ($user != null) {
-            $user_id = $user[0]->id;
-        } else {
-            $sql = "insert into Users (name) VALUES ('". $user_name ."');";
-            DB::select($sql);
-            $user = DB::select("select * from users where name = '" . $user_name . "'");
-            $user_id = $user[0]->id;
+        if ($user == null) {
+            $sql = "insert into Users (name) VALUES (?)";
+            DB::select($sql, array($user_name));
+            $user = DB::select("select * from Users where name = ?", array($user_name));
         }
+        $user_id = $user[0]->id;
         $now = date('Y-m-d H:i:s');
-        $sql = "insert into posts (title, message, date, userId) values ('" . $title . "', '" . $message . "', '" . $now . "', '" . $user_id . "')";
-        $post = DB::select($sql);
+        $sql = "insert into Posts (title, message, date, userId) values (?, ?, ?, ?)";
+        DB::select($sql, array($title, $message, $now, $user_id));
 
         return redirect('/');
     }
@@ -85,16 +77,20 @@ class PostController extends Controller
      */
     public function show(int $postId)
     {
-        $sql = "select * from posts where id = '" . $postId . "'";
-        $posts = DB::select($sql);
+        $sql = "select * from posts where id = ?";
+        $posts = DB::select($sql, array($postId));
         $post = $posts[0];
 
-        $authors = DB::select("select * from users where id = '" . $post->userId ."'");
+        $sql = "select * from Users where id = ?";
+        $authors = DB::select($sql, array($post->userId));
         $author = $authors[0] ;
 
-        $comments = DB::select("select * from comments as c, users as u where c.userId = u.id and postId = '" . $postId . "'");
+//        $sql = "select * from Comments as c, users as u where c.userId = u.id and postId = ?";
+//        $comments = DB::select($sql, array($postId));
 
-        return view("posts.post_details", ['post' => $post, 'user' => $author, 'comments' => $comments]);
+        $comments = CommentController::parent_comments($postId);
+
+        return view("posts.post_details", ['post' => $post, 'user' => $author, 'parentComments' => $comments]);
     }
 
     /**

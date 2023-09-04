@@ -8,8 +8,8 @@ create table Comments (
     postId integer,
     parentCommentID integer nullable,
     FOREIGN KEY (userId) REFERENCES Users(id),
-    FOREIGN KEY (postId) REFERENCES Post(id),
-    FOREIGN KEY (parentCommentID) REFERENCES Comment(id)
+    FOREIGN KEY (postId) REFERENCES Posts(id),
+    FOREIGN KEY (parentCommentID) REFERENCES Comments(id)
 );
 
 insert into Comments (message,date,userId,postId,parentCommentID) VALUES ('Wow! Amazing!','2023-09-03',3, 5, null);
