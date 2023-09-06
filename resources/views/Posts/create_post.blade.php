@@ -29,7 +29,13 @@
                 </div>
             @endif
 
-            @php($name_val = $session_user != "" ? $input_val = $session_user : $input_val = old('user_name'))
+            @php
+                $name_val = "";
+                if (isset($_SESSION['session_user'])) {
+                    $suser = $_SESSION['session_user'];
+                    $name_val = $suser != "" ? $input_val = $suser : $input_val = old('user_name');
+                }
+            @endphp
 
             <div class="post-list">
                 <div class="post-box">
@@ -49,7 +55,7 @@
                     </div>
                     <div>
                         <div><label class="post-message" for="post_message">Post Message</label></div>
-                        <textarea class="post-message" name="message">{{ old('message') }}</textarea>
+                        <textarea class="post-message" id="post_message" name="message">{{ old('message') }}</textarea>
                         @error('message')
                         <div>{{$message}}</div>
                         @enderror
