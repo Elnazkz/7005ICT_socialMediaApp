@@ -10,7 +10,7 @@
         <div class="top-div">
             <div class="page-desc1">
                 <h2>Create a Post</h2>
-                <div style="margin-bottom: 10px;">
+                <div>
                     <input class="button push-left-btn" type="submit" value="Create">
                     <a class="button" href="{{ url('/')}}">Cancel</a>
                 </div>
