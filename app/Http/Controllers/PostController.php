@@ -19,7 +19,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = DB::select(
-            'select p.id, p.title, u.name ' .
+            'select p.id, p.title, p.date, u.name ' .
             'from posts as p, users as u ' .
             'where p.userId = u.id');
         return view ('home', ['posts' => $posts]);
@@ -30,7 +30,10 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('posts.create_post');
+        session_start();
+
+        $session_user = $_SESSION['session_user'] ?? "";
+        return view('posts.create_post', ['session_user' => $session_user]);
     }
 
     /**
@@ -52,9 +55,12 @@ class PostController extends Controller
             return back()->withInput()->withErrors($res);
         }
 
+        session_start();
+
         $title = trim($request->title);
         $message = $request->message;
         $user_name = trim($request->user_name);
+        $_SESSION['session_user'] = $user_name;
 
         // check the user table for the username, if not exist then create the user
         $user = DB::select("select * from Users where name = ?", array($user_name));
@@ -93,9 +99,13 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Post $post)
+    public function edit(int $post_id)
     {
-        //
+        $sql = "select p.id as pid, p.title, p.message, u.id as uid, u.name from Posts as p " .
+            "left join Users u on p.userId = u.id " .
+            "where p.id = ?";
+        $post = DB::select($sql, array($post_id));
+        return view("posts.edit_post", ['post' => $post[0]]);
     }
 
     /**
@@ -103,14 +113,35 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        // The validation rules are set here and checked on the post variables
+        $res = Helpers::make_validation([
+            'title' => 'required|min:3',
+            'message' => 'required|words:5'
+        ]);
+
+        // if the validations requirements aren't met, it will go back
+        // otherwise it will create a new post
+        if (count($res) !== 0) {
+            return back()->withInput()->withErrors($res);
+        }
+
+        $now = date('Y-m-d H:i:s');
+        $sql = "update Posts set title = ?, message = ?, date = ? " .
+            "where id = ?";
+        DB::select($sql, array($request->title, $request->message, $now, $request->pid));
+        return redirect('post_details/' . $request->pid);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Post $post)
+    public function destroy(int $post_id)
     {
-        //
+        $sql = "delete from Comments where postId = ?";
+        DB::select($sql, array($post_id));
+        $sql = "delete from Posts where id = ?";
+        DB::select($sql, array($post_id));
+
+        return redirect('/');
     }
 }

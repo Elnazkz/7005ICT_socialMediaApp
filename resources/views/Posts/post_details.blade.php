@@ -5,26 +5,23 @@
 @endsection
 
 @section('body')
-
     <div>
-        <h2 class="inline-elem">Post Details</h2>
-        <div>
+        <div class="page-desc1">
+            <h2>Post Details</h2>
+            <a class="button push-left-btn" href="{{ url('edit_post/' . $post->id) }}">Edit</a>
+            <a class="button" href="{{ url('del_post/' . $post->id) }}">Delete</a>
+        </div>
+        <hr class="hr-page">
+
+        <div class="post-list">
             <div class="post-box">
-                <div>
-                    <span><h2>{{ $post->title }}</h2></span>
-
-
-
-                    <span>
-                        <a class="button" href="{{ url('comments/create') }}/{{ $post->id }}">Create</a>
-                    </span>
-                    <span>
-                        <a class="button" href="{{ url('edit_post/') }}/{{ $post->id }}">Edit</a>
-                    </span>
+                <div class="post-desc1">
+                    <h2>{{ $post->title }}</h2>
+                    <a class="button" href="{{ url('comments/create') }}/{{ $post->id }}">Reply</a>
                 </div>
-                <p>Posted on: {{ $post->date }}</p>
-                <p>Author: {{ $user->name }}</p>
-                <p>{{ $post->message }}</p>
+                <p class="post-date">Posted on: {{ $post->date }}</p>
+                <p class="post-author">Author: {{ $user->name }}</p>
+                <p class="post-message">{{ $post->message }}</p>
             </div>
 
             @foreach($parentComments as $parentComment)

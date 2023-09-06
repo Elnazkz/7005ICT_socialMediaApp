@@ -4,22 +4,49 @@
     Edit Post
 @endsection
 
-
 @section('body')
-    <div class="top-div">
-        <h2>Edit Post</h2><span>Post Id = {{ $post_id }}</span>
-
-        <form>
-            <div class="post-box">
-                <label for="post_title">Post Title</label><br>
-                <input type="text" id="post_title" name="post_title" value="post title 1"><br><br>
-                <label for="post_message">Post Message</label><br>
-                <textarea id="post_message" name="post_message" rows="5" cols="50">some text as the post message 1
-                </textarea><br><br>
-                <input type="submit" value="Apply">
-                <input type="submit" value="Cancel">
+    <form action="{{ url('post_edit') }}" method="post">
+        <input type="hidden" name="pid" value="{{ $post->pid }}" >
+        <input type="hidden" name="uid" value="{{ $post->uid }}" >
+        <input type="hidden" name="name" value="{{ $post->name }}">
+        <div class="top-div">
+            <div class="page-desc1">
+                <h2>Edit Post Details</h2>
+                <input class="button push-left-btn" type="submit" value="Apply">
+                <a class="button" href="{{ url('/post_details/' . $post->pid) }}">Cancel</a>
             </div>
-        </form>
+            <hr class="hr-page">
 
-    </div>
+            <div class="post-list">
+                    @csrf
+
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
+                    <div class="post-box">
+                        <div><label class="post-title" for="post_title">Post Title</label></div>
+                        <div><input class="post-title" type="text" id="post_title" name="title" value="{{ $post->title }}"></div>
+                        @error('title')
+                        <div class="">{{$message}}</div>
+                        @enderror
+                        <br>
+
+                        <div><label class="post-message" for="post_message">Post Message</label></div>
+                        <div>
+                            <textarea class="post-message" id="post_message" name="message">{{ $post->message }}</textarea>
+                            @error('message')
+                            <div class="alert alert-danger">{{$message}}</div>
+                            @enderror
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </form>
 @endsection

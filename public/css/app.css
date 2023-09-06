@@ -8,20 +8,24 @@ body {
 }
 
 #main_title {
+    height: 100px;
     background-color: #58afaf;
     margin: 0px;
     font-style: italic;
+    padding: 0;
 }
 
 #main_title p {
     padding: 20px;
     text-align: center;
     font-size: 2.5em;
+    margin: 5px 20px 0;
 }
 
 nav.skew-menu{
     text-align:right;
     margin-top:0px;
+    padding: 5px 15px 10px;
 }
 
 nav.skew-menu > ul{
@@ -192,10 +196,9 @@ a {
 }
 
 .post-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
 }
 
 .post-box {
@@ -204,7 +207,71 @@ a {
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     width: 90%;
-    padding: 20px;
+    padding: 0 20px 0;
+}
+
+.post-title {
+    margin: 0;
+    padding: 0;
+}
+
+label.post-author {
+    font-style: italic;
+    font-weight: bold;
+    padding: 5px 0;
+    margin: 10px 0 5px 5px;
+    font-size: large;
+}
+
+label.post-title {
+    font-style: italic;
+    font-weight: bold;
+    padding: 5px 0;
+    margin: 10px 0 5px 5px;
+    font-size: large;
+}
+
+label.post-message {
+    font-style: italic;
+    font-weight: bold;
+    padding: 5px 0;
+    margin: 10px 0 5px 5px;
+    font-size: large;
+}
+
+input[type=text].post-title {
+    height: 30px;
+    font-size: large;
+    border: 1px solid #2b2b2c;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+textarea.post-message {
+    width: 80%;
+    height: 150px;
+    font-size: large;
+    border: 1px solid #2b2b2c;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.post-date {
+    margin: 0;
+    padding: 0;
+}
+
+.post-author {
+    margin: 0;
+    padding: 0;
+    font-style: italic;
+    font-size: large;
+}
+
+.post-message {
+    margin: 0;
+    padding: 10px 0 10px;
+    font-size: large;
 }
 
 .comment-list {
@@ -242,4 +309,50 @@ a {
     transition: background 0.3s ease, transform 0.2s ease;
     text-decoration: none;
     margin-bottom: 10px;
+    text-align: center;
+}
+
+.page-desc1 {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.page-desc1 > h2 {
+    flex: 6;
+}
+
+.page-desc1 > .button {
+    flex: 1;
+}
+
+.hr-page {
+    width: 85%;
+}
+
+.page-desc1 .button.push-left-btn {
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.post-desc1 {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.post-desc1 > h2 {
+    flex: 6;
+}
+
+.post-desc1 > .button {
+    flex: 1;
+}
+
+.is-invalid {
+    background: red;
 }

@@ -6,10 +6,17 @@
 
 
 @section('body')
-    <div>
-        <h2>Create a Post</h2>
+    <form action="{{ url('create_post') }}" method="post">
+        <div class="top-div">
+            <div class="page-desc1">
+                <h2>Create a Post</h2>
+                <div style="margin-bottom: 10px;">
+                    <input class="button push-left-btn" type="submit" value="Create">
+                    <a class="button" href="{{ url('/')}}">Cancel</a>
+                </div>
+            </div>
+            <hr class="hr-page">
 
-        <form action="{{ url('create_post') }}" method="post">
             @csrf
 
             @if ($errors->any())
@@ -22,32 +29,34 @@
                 </div>
             @endif
 
-            <div style="margin-bottom: 10px;">
-                <label for="user_name">User Name:</label><br>
-                <input type="text" id="user_name" name="user_name" class="@error('user_name') is-invalid @enderror" value="{{ old('user_name') }}">
-                @error('user_name')
-                <div>{{$message}}</div>
-                @enderror
+            @php($name_val = $session_user != "" ? $input_val = $session_user : $input_val = old('user_name'))
+
+            <div class="post-list">
+                <div class="post-box">
+                    <div><label class="post-author" for="user_name">User Name</label></div>
+                    <div><input class="post-author" type="text" id="user_name" name="user_name" value="{{ $name_val }}">
+                        @error('user_name')
+                        <div>{{$message}}</div>
+                        @enderror
+                    </div>
+                    <div>
+                        <div><label class="post-title" for="title">Title:</label></div>
+                        <div><input class="post-title" type="text" id="title" name="title" value="{{ old('title') }}">
+                        </div>
+                        @error('title')
+                        <div>{{$message}}</div>
+                        @enderror
+                    </div>
+                    <div>
+                        <div><label class="post-message" for="post_message">Post Message</label></div>
+                        <textarea class="post-message" name="message">{{ old('message') }}</textarea>
+                        @error('message')
+                        <div>{{$message}}</div>
+                        @enderror
+                    </div>
+                    <br><br>
+                </div>
             </div>
-            <div style="margin-bottom: 10px;">
-                <label for="title">Title:</label><br>
-                <input type="text" id="title" name="title" class="@error('title') is-invalid @enderror" value="{{ old('title') }}">
-                @error('title')
-                <div>{{$message}}</div>
-                @enderror
-            </div>
-            <div style="margin-bottom: 10px;">
-            Message:<br>
-            <textarea name="message" rows="4" cols="50" class="@error('message') is-invalid @enderror">{{ old('message') }}</textarea>
-            @error('message')
-            <div>{{$message}}</div>
-            @enderror
-            </div>
-            <br><br>
-            <div style="margin-bottom: 10px;">
-            <button type="submit">Submit</button>
-            </div>
-        </form>
-    </div>
-    </div>
+        </div>
+    </form>
 @endsection
