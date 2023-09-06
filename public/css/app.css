@@ -1,4 +1,5 @@
-
+/*HOME styling*/
+/*setting the style for the body of all pages*/
 body {
     font-size: 100%;
     max-width: 900px;
@@ -10,11 +11,12 @@ body {
 #main_title {
     height: 100px;
     background-color: #58afaf;
-    margin: 0px;
+    margin: 0;
     font-style: italic;
     padding: 0;
 }
 
+/*1em is 16px, em equals to the current font size*/
 #main_title p {
     padding: 20px;
     text-align: center;
@@ -24,10 +26,14 @@ body {
 
 nav.skew-menu{
     text-align:right;
-    margin-top:0px;
     padding: 5px 15px 10px;
+    margin-top:0;
 }
 
+/*display: inline-block allows to set a width and height on the element.*/
+/*Also, with display: inline-block, the top and bottom margins/paddings are respected*/
+/*list-style:none define list item marker*/
+/*a transformation that skews an element on the 2D plane; it streches the boxes around menu*/
 nav.skew-menu > ul{
     display:inline-block;
     margin:0;
@@ -44,9 +50,11 @@ nav.skew-menu > ul > li {
     text-transform: uppercase;
     color: #555;
     font-weight: bolder;
+    /* Apply to all changed properties; transition colour when hovered and change colour in a smooth way */
     transition: all 0.3s linear;
 }
 
+/*stylel the first element in the list*/
 nav.skew-menu > ul > li:first-child {
     border-radius: 7px 0 0 7px;
 }
@@ -66,133 +74,12 @@ nav.skew-menu > ul > li > a {
     padding:1em 2em;
     color:inherit;
     text-decoration:none;
+    /*the boxes are stretched, this property will prevent text to stretch as well.*/
     transform:skew(25deg);
-}
-
-.tg {
-    border: 1px solid #b3adad;
-    border-collapse:separate;
-    padding: 1px;
-    width: 100%;
-    height: 200px;
-}
-
-.posts-title-table {
-    width: 100%;
-}
-
-.posts-title-row {
-    width: 100%;
-}
-
-.posts-title-col1 {
-    width: 90%;
-}
-
-.posts-title-col2 {
-    width: 10%;
-    text-align: right;
-}
-
-.tg .tg-col-date {
-    width: 10%;
-}
-
-.tg .tg-col-title {
-    width: 40%;
-}
-
-.tg .tg-col-author {
-    width: 25%
-}
-
-.tg .tg-col-comments {
-    width: 7%;
-}
-
-.tg .tg-col-likes {
-    width: 6%;
-}
-
-.tg .tg-col-edit {
-    width: 6%;
-}
-
-.tg .tg-col-del {
-    width: 6%;
-}
-
-.tg th {
-    border: 1px solid #b3adad;
-    padding:5px;
-    background-color:#b9c9fe;
-    color:#039;
-    font-family:Arial,
-    sans-serif;
-    font-size:14px;
-    font-weight:normal;
-}
-
-.tg td {
-    border: 1px solid #b3adad;
-    text-align: left;
-    padding:5px;
-    background-color:#e8edff;
-    color:#669;
-    font-family:Arial, sans-serif;
-    font-size:14px;
-}
-
-.tg .tg-hd-attr {
-    text-align: center;
-    top: -1px;
-    vertical-align: center;
-    will-change: transform
-}
-
-.tg .tg-row1-attr {
-    background-color: #D2E4FC;
-    text-align: left;
-    vertical-align: center
-}
-
-.tg .tg-row2-attr{
-    text-align:left;
-    vertical-align:center;
-}
-
-@media screen and (max-width: 767px) {
-    .tg {
-        width: auto !important;
-    }
-    .tg col {
-        width: auto !important;
-    }
-    .tg-wrap {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        margin: auto 0px;
-    }
 }
 
 a {
     color: black;
-}
-
-.prepend-10px {
-    margin: 0 0 0 10px;
-}
-
-.prepend-20px {
-    margin: 0 0 0 20px;
-}
-
-.append-10px {
-    margin: 0 10px 0 0;
-}
-
-.append-20px {
-    margin: 0 20px 0 0;
 }
 
 .post-list {
@@ -308,7 +195,6 @@ textarea.post-message {
     cursor: pointer;
     transition: background 0.3s ease, transform 0.2s ease;
     text-decoration: none;
-    margin-bottom: 10px;
     text-align: center;
 }
 

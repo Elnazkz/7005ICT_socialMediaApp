@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\utils;
 
-use App\Models\Like;
 use Illuminate\Http\Request;
+use UtilClass\Like;
 
-class LikeController extends Controller
+class LikeController
 {
     /**
      * Display a listing of the resource.

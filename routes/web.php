@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\CommentController;
+
+use App\utils\CommentController;
+use App\utils\MyUserController;
+use App\utils\PostController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PostController;
-use \App\Http\Controllers\MyUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,11 +18,8 @@ use \App\Http\Controllers\MyUserController;
 */
 Route::get('/posts/create', [PostController::class, 'create']);
 Route::post('/create_post', [PostController::class, 'store']);
-
 Route::get('/posts/{user_id}', [MyUserController::class, 'show']);
-
 Route::get('/post_details/{post_id}', [PostController::class, 'show']);
-
 Route::get('/edit_post/{post_id}', [PostController::class, 'edit']);
 Route::post('/post_edit', [PostController::class, 'update']);
 
@@ -35,12 +33,9 @@ Route::get('/del_post/{post_id}', function ($post_id) {
 Route::get('/post_del/{post_id}', [PostController::class, 'destroy']);
 
 Route::get('/comments/create/{post_id}', [CommentController::class, 'create']);
+Route::get('/comments/reply/{post_id}/{parent_id}', [CommentController::class, 'reply']);
 Route::post('/create_comment', [CommentController::class, 'store']);
-
-
-Route::get('/edit_comment/{comment_id}', function ($comment_id) {
-    return view('posts.edit_comment', ['comment_id' => $comment_id]);
-});
+Route::post('/reply_comment', [CommentController::class, 'store']);
 
 Route::get('/users', [MyUserController::class, 'index']);
 

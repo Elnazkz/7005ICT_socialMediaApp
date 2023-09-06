@@ -16,6 +16,8 @@
 
         <input id="post_id" name="post_id" type="hidden" value="{{ $post_id }}">
 
+        <input id="parent_id" name="parent_id" type="hidden" value="{{ $parent_id }}">
+
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
