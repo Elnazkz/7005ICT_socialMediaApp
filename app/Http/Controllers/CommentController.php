@@ -60,7 +60,7 @@ class CommentController extends Controller
         $sql = "insert into Comments (message, date, userId, postId, parentCommentID) values (?, ?, ?, ?, ?)";
         DB::select($sql, array($message, $now, $user_id, $post_id, null));
 
-        return redirect('/');
+        return redirect('/post_details/' . $post_id);
     }
 
     /**
