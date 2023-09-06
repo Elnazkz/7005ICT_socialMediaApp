@@ -25,7 +25,7 @@
             </div>
 
             @foreach($parentComments as $parentComment)
-                <details>
+                <details class="comment-box">
                     <summary>
                         <span>{{ $parentComment->date }}</span>
                     </summary>

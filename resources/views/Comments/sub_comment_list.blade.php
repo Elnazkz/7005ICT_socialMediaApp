@@ -1,5 +1,5 @@
 @foreach($sub_comments as $sub_comment)
-    <details>
+    <details class="comment-box">
         <summary>
             <span>{{ $sub_comment->date }}</span>
         </summary>
