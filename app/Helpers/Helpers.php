@@ -48,8 +48,9 @@ class Helpers {
                         break;
                     }
                 } else if (self::starts_with('alpha', $rule)) {
-                    if (!ctype_alpha($fld)) {
-                        $ret_val[$field_name] = $field_name . ' must be all numbers.';
+                    //if (!ctype_alpha(str_replace(' ', '', $fld))) {
+                    if (ctype_alpha(str_replace(' ', '', $fld)) === false) {
+                        $ret_val[$field_name] = $field_name . ' must be all characters.';
                         break;
                     }
                 } else {
