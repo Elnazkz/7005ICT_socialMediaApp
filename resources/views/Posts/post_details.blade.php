@@ -25,21 +25,23 @@
             </div>
 
             @foreach($parentComments as $parentComment)
-                <ul>
-                    <div class="comment-box">
-                        <li>
-                            <span>{{ $parentComment->message}}</span>,
-                            <span>{{ $parentComment->date }}</span>,
-                            <span>{{ $parentComment->name }}</span>
-                        </li>
-                    </div>
-                    @php
-                        $sc = App\Http\Controllers\CommentController::sub_comments($parentComment->postId, $parentComment->cid);
-                    @endphp
-                    @if (count($sc))
-                        @include('Comments\sub_comment_list', ['sub_comments' => $sc])
-                    @endif
-                </ul>
+                <details>
+                    <summary>
+                        <span>{{ $parentComment->date }}</span>
+                    </summary>
+                    <ul>
+                        <div class="comment-box">
+                            <li>
+                                <span>{{ $parentComment->message}}</span>,
+                                <span>{{ $parentComment->name }}</span>
+                            </li>
+                        </div>
+                        @php($sc = App\Http\Controllers\CommentController::sub_comments($parentComment->postId, $parentComment->cid))
+                        @if (count($sc))
+                            @include('Comments\sub_comment_list', ['sub_comments' => $sc])
+                        @endif
+                    </ul>
+                </details>
             @endforeach
         </div>
     </div>
