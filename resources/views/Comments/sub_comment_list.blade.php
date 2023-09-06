@@ -4,7 +4,8 @@
             <span>{{ $sub_comment->message}}</span>,
             <span>{{ $sub_comment->date }}</span>,
             <span>{{ $sub_comment->name }}</span>
-            <a class="button" href="{{ url('comments/reply') }}/{{ $post->id }}/{{ $sub_comment->cid }}">Reply</a>
+            <a class="button" style="margin-left: 10px;"
+               href="{{ url('comments/reply') }}/{{ $post->id }}/{{ $sub_comment->cid }}">Reply</a>
         </summary>
         @php($sc = \App\utils\CommentController::sub_comments($sub_comment->postId, $sub_comment->cid))
         @if (count($sc))

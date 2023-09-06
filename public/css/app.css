@@ -97,6 +97,16 @@ a {
     padding: 0 20px 0;
 }
 
+.post-like {
+    display: flex;
+    margin: 0 auto 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    padding: 0 20px 0;
+}
+
 .post-title {
     margin: 0;
     padding: 0;
@@ -161,6 +171,21 @@ textarea.post-message {
     font-size: large;
 }
 
+p.post-message1 {
+    padding: 5px 0 5px 0;
+    margin: 1px;
+    border-style: solid;
+    border-color: #fdfdfe;
+    border-width: 1px 0 10px 0;
+    font-size: large;
+}
+
+div.post-message1 {
+    margin-top: 5px;
+    padding: 2px;
+    border: 2px groove #b6b6b6;
+}
+
 .comment-list {
     display: flex;
     flex-direction: column;
@@ -181,6 +206,17 @@ textarea.post-message {
 
 .comment-box p {
     margin-left: 40px;
+}
+
+.comment-box-flex {
+    display: flex;
+    margin: 5px auto 0 auto;
+    background-color: #666;
+    color: antiquewhite;
+    border-radius: 5px;
+    width: 90%;
+    padding: 20px;
+    border: 2px solid black;
 }
 
 /* Basic button styling */
@@ -223,6 +259,29 @@ textarea.post-message {
     margin-right: 10px;
 }
 
+a.button.push-left-btn {
+    display: flex;
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.show-like {
+    display: flex;
+    align-items: center
+}
+
+div.push-left-like {
+    display: flex;
+    margin-left: auto;
+    margin-right: 10px;
+    align-items: center;
+}
+
+p.push-left-like {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
 .post-desc1 {
     width: 100%;
     margin: 0 auto;
@@ -241,4 +300,9 @@ textarea.post-message {
 
 .is-invalid {
     background: red;
+}
+
+input[type=text].like-user-name {
+    margin: 5px 0 10px 0;
+    font-size: larger;
 }

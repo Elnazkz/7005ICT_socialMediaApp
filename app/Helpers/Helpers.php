@@ -5,6 +5,8 @@ namespace App\Helpers;
 // Helper class to do validations on the requests
 // This class has been created to work like laravel validation itself
 // 'required|min:255|max:255'
+use Illuminate\Support\Facades\DB;
+
 class Helpers {
     /**
      * @throws \Exception
@@ -71,5 +73,9 @@ class Helpers {
                 $ret_val[] = trim($param);
         }
         return $ret_val;
+    }
+
+    public static function strip_rule(string $rule, string $command) {
+        return substr($rule, 0, strlen($command) + 1);
     }
 }

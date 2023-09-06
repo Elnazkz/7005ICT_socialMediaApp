@@ -4,15 +4,16 @@
     Create Post
 @endsection
 
-@section('bodyTitle')
-    Create a Post
-@endsection
-
 @section('bodyTitleExtra')
     <a class="button" href="{{ url('/')}}">Cancel</a>
 @endsection
 
 @section('body')
+    <div class="page-desc1">
+        <h2>Create Post</h2>
+    </div>
+    <hr class="hr-page">
+
     <form action="{{ url('create_post') }}" method="post">
         @csrf
 

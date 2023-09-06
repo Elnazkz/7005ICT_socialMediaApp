@@ -47,7 +47,7 @@ class CommentController
 
         if ($user == null) {
             $sql = "insert into Users (name) VALUES (?)";
-            DB::select($sql, array($user_name));
+            DB::insert($sql, array($user_name));
             $user = DB::select("select * from Users where name = ?", array($user_name));
         }
         $user_id = $user[0]->id;
@@ -55,7 +55,7 @@ class CommentController
         $sql = "insert into Comments (message, date, userId, postId, parentCommentID) values (?, ?, ?, ?, ?)";
 
 
-        DB::select($sql, array($message, $now, $user_id, $post_id, $parentId));
+        DB::insert($sql, array($message, $now, $user_id, $post_id, $parentId));
 
         return redirect('/post_details/' . $post_id);
     }

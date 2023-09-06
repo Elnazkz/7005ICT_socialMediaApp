@@ -63,13 +63,13 @@ class PostController
 
         if ($user == null) {
             $sql = "insert into Users (name) VALUES (?)";
-            DB::select($sql, array($user_name));
+            DB::insert($sql, array($user_name));
             $user = DB::select("select * from Users where name = ?", array($user_name));
         }
         $user_id = $user[0]->id;
         $now = date('Y-m-d H:i:s');
         $sql = "insert into Posts (title, message, date, userId) values (?, ?, ?, ?)";
-        DB::select($sql, array($title, $message, $now, $user_id));
+        DB::insert($sql, array($title, $message, $now, $user_id));
 
         return redirect('/');
     }
@@ -127,7 +127,7 @@ class PostController
         $title = request('title');
         $message = request('message');
         $id = trim(request('pid'));
-        DB::select($sql, array($title, $message, $now, $id));
+        DB::update($sql, array($title, $message, $now, $id));
         return redirect('post_details/' . $id);
     }
 
@@ -137,10 +137,18 @@ class PostController
     public static function destroy(int $post_id)
     {
         $sql = "delete from Comments where postId = ?";
-        DB::select($sql, array($post_id));
+        DB::delete($sql, array($post_id));
         $sql = "delete from Posts where id = ?";
-        DB::select($sql, array($post_id));
+        DB::delete($sql, array($post_id));
 
         return redirect('/');
+    }
+
+    public static function confirm_del(int $post_id) {
+        $sql = "select p.id, p.title, p.message, u.name from Posts as p " .
+            "left join Users u on p.userId = u.id " .
+            "where p.id = ?";
+        $post = DB::select($sql, array($post_id));
+        return view('posts.del_post', ['post' => $post[0]]);
     }
 }
