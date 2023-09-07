@@ -4,11 +4,12 @@
     Users
 @endsection
 
-@section('bodyTitle')
-    Users
-@endsection
-
 @section('body')
+    <div class="page-desc1">
+        <h2>Users</h2>
+    </div>
+    <hr class="hr-page">
+
     <div class="post-list">
         @forelse($users as $user)
             <div class="post-box">

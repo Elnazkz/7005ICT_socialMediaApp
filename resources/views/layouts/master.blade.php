@@ -19,14 +19,7 @@
     </ul>
 </nav>
 
-<div>
-    <div class="page-desc1">
-        <h2>@yield('bodyTitle')</h2>
-        @yield('bodyTitleExtra')
-    </div>
-    <hr class="hr-page">
-    @yield('body')
-</div>
+@yield('body')
 
 <div id="footer">
 

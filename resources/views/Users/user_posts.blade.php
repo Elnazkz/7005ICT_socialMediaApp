@@ -4,11 +4,12 @@
     User Posts
 @endsection
 
-@section('bodyTitle')
-    Posts created by {{ $name }}
-@endsection
-
 @section('body')
+    <div class="page-desc1">
+        <h2>Posts created by {{ $name }}</h2>
+    </div>
+    <hr class="hr-page">
+
     <div class="post-list">
         @forelse($posts as $post)
             <div class="post-box">

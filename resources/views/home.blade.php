@@ -4,15 +4,13 @@
     Home
 @endsection
 
-@section('bodyTitle')
-    All Posts
-@endsection
-
-@section('bodyTitleExtra')
-    <a class="button" href="{{ url('posts/create') }}">Create</a>
-@endsection
-
 @section('body')
+    <div class="page-desc1">
+        <h2>All Posts</h2>
+        <a class="button" href="{{ url('posts/create') }}">Create</a>
+    </div>
+    <hr class="hr-page">
+
     <div class="post-list">
         {{--    loop through the posts list and set each post's values in its place in html--}}
 

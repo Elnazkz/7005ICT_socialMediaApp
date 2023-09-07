@@ -138,6 +138,8 @@ class PostController
     {
         $sql = "delete from Comments where postId = ?";
         DB::delete($sql, array($post_id));
+        $sql = "delete from Likes where postId = ?";
+        DB::delete($sql, array($post_id));
         $sql = "delete from Posts where id = ?";
         DB::delete($sql, array($post_id));
 

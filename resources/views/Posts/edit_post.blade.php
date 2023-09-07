@@ -5,7 +5,7 @@
 @endsection
 
 @section('bodyTitle')
-    Edit Post Details
+
 @endsection
 
 
@@ -14,6 +14,13 @@
         <input type="hidden" name="pid" value="{{ $post->pid }}" >
         <input type="hidden" name="uid" value="{{ $post->uid }}" >
         <input type="hidden" name="name" value="{{ $post->name }}">
+
+        <div class="page-desc1">
+            <h2>Edit Post Details</h2>
+            <input class="button push-left-btn" type="submit" value="Apply">
+            <a class="button" href="{{ url('/post_details/' . $post->pid) }}">Cancel</a>
+        </div>
+        <hr class="hr-page">
 
         <div class="post-list">
             @csrf
@@ -45,8 +52,6 @@
                 </div>
             </div>
             <br>
-            <input class="button push-left-btn" type="submit" value="Apply">
-            <a class="button" href="{{ url('/post_details/' . $post->pid) }}">Cancel</a>
         </div>
     </form>
 @endsection

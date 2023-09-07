@@ -4,19 +4,20 @@
     Reply
 @endsection
 
-@section('bodyTitle')
-    Reply
-@endsection
-
-
 @section('body')
     <form action="{{ url('create_comment') }}" method="post">
-        @csrf
         {{--    to set the id for the post which the comment is written for--}}
-
         <input id="post_id" name="post_id" type="hidden" value="{{ $post_id }}">
-
         <input id="parent_id" name="parent_id" type="hidden" value="{{ $parent_id }}">
+
+        <div class="page-desc1">
+            <h2>Reply</h2>
+            <input class="button push-left-btn" type="submit" value="Submit">
+            <a class="button" href="{{ url('post_details/' . $post_id) }}">Cancel</a>
+        </div>
+        <hr class="hr-page">
+
+        @csrf
 
         @if ($errors->any())
             <div class="alert alert-danger">
@@ -46,10 +47,6 @@
                 </div>
             </div>
             <br>
-
-            <input class="button push-left-btn" type="submit" value="Submit">
-            <a class="button" href="{{ url('post_details/' . $post_id) }}">Cancel</a>
-
         </div>
     </form>
 @endsection

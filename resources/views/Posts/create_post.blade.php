@@ -4,17 +4,15 @@
     Create Post
 @endsection
 
-@section('bodyTitleExtra')
-    <a class="button" href="{{ url('/')}}">Cancel</a>
-@endsection
-
 @section('body')
-    <div class="page-desc1">
-        <h2>Create Post</h2>
-    </div>
-    <hr class="hr-page">
-
     <form action="{{ url('create_post') }}" method="post">
+        <div class="page-desc1">
+            <h2>Create Post</h2>
+            <input class="button push-left-btn" type="submit" value="Create">
+            <a class="button" href="{{ url('/')}}">Cancel</a>
+        </div>
+        <hr class="hr-page">
+
         @csrf
 
         @if ($errors->any())
@@ -60,8 +58,6 @@
                 <br><br>
             </div>
             <br>
-            <input class="button push-left-btn" type="submit" value="Create">
-
         </div>
     </form>
 @endsection
