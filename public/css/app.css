@@ -1,37 +1,5 @@
-/*!* W3Schools *!*/
-
-/*body {*/
-/*    !*background-image: url("../images/pic1.png");*!*/
-/*}*/
-
-/*!* Styling for the navigation menu *!*/
-/*.navigation {*/
-/*    background-color: #333333;*/
-/*    width: 270px;*/
-/*    height: 100%;*/
-/*    position: absolute;*/
-/*}*/
-
-/*.navigation li {*/
-/*    font-size: 20px;*/
-/*    list-style: none;*/
-/*    margin-bottom: 20px;*/
-/*}*/
-
-
-/*!* Styling for the navigation menu links*!*/
-/*.navigation a {*/
-/*    text-decoration: none; !* no underlines*!*/
-/*    color: #ffffff;*/
-/*    font-size: 20px;*/
-/*    transition: 0.3s;*/
-/*}*/
-
-/*!* Styling for the navigation menu links when hovered on*!*/
-/*.navigation a:hover {*/
-/*    color: #4b9531;*/
-/*}*/
-
+/*HOME styling*/
+/*setting the style for the body of all pages*/
 body {
     font-size: 100%;
     max-width: 900px;
@@ -41,22 +9,31 @@ body {
 }
 
 #main_title {
+    height: 100px;
     background-color: #58afaf;
-    margin: 0px;
+    margin: 0;
     font-style: italic;
+    padding: 0;
 }
 
+/*1em is 16px, em equals to the current font size*/
 #main_title p {
     padding: 20px;
     text-align: center;
     font-size: 2.5em;
+    margin: 5px 20px 0;
 }
 
 nav.skew-menu{
     text-align:right;
-    margin-top:0px;
+    padding: 5px 15px 10px;
+    margin-top:0;
 }
 
+/*display: inline-block allows to set a width and height on the element.*/
+/*Also, with display: inline-block, the top and bottom margins/paddings are respected*/
+/*list-style:none define list item marker*/
+/*a transformation that skews an element on the 2D plane; it streches the boxes around menu*/
 nav.skew-menu > ul{
     display:inline-block;
     margin:0;
@@ -73,9 +50,11 @@ nav.skew-menu > ul > li {
     text-transform: uppercase;
     color: #555;
     font-weight: bolder;
+    /* Apply to all changed properties; transition colour when hovered and change colour in a smooth way */
     transition: all 0.3s linear;
 }
 
+/*stylel the first element in the list*/
 nav.skew-menu > ul > li:first-child {
     border-radius: 7px 0 0 7px;
 }
@@ -95,111 +74,226 @@ nav.skew-menu > ul > li > a {
     padding:1em 2em;
     color:inherit;
     text-decoration:none;
+    /*the boxes are stretched, this property will prevent text to stretch as well.*/
     transform:skew(25deg);
 }
 
-.tg {
-    border: 1px solid #b3adad;
-    border-collapse:separate;
-    padding: 1px;
-    width: 100%;
-    height: 200px;
+a {
+    color: black;
 }
 
-.posts-title-table {
-    width: 100%;
+.data-list {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
 }
 
-.posts-title-row {
-    width: 100%;
-}
-
-.posts-title-col1 {
+.card-box {
+    margin: 0 auto 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     width: 90%;
+    padding: 20px;
 }
 
-.posts-title-col2 {
-    width: 10%;
-    text-align: right;
+.post-like {
+    display: flex;
+    margin: 0 auto 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    padding: 0 20px 0;
 }
 
-.tg .tg-col-date {
-    width: 10%;
+.post-title {
+    margin: 0;
+    padding: 0;
 }
 
-.tg .tg-col-title {
-    width: 40%;
+label.post-author {
+    font-style: italic;
+    font-weight: bold;
+    padding: 5px 0;
+    margin: 10px 0 5px 5px;
+    font-size: large;
 }
 
-.tg .tg-col-author {
-    width: 25%
+label.post-title {
+    font-style: italic;
+    font-weight: bold;
+    padding: 5px 0;
+    margin: 10px 0 5px 5px;
+    font-size: large;
 }
 
-.tg .tg-col-comments {
-    width: 7%;
+label.post-message {
+    font-style: italic;
+    font-weight: bold;
+    padding: 5px 0;
+    margin: 10px 0 5px 5px;
+    font-size: large;
 }
 
-.tg .tg-col-likes {
-    width: 6%;
+input[type=text].post-title {
+    height: 30px;
+    font-size: large;
+    border: 1px solid #2b2b2c;
+    border-radius: 5px;
+    padding: 3px;
 }
 
-.tg .tg-col-edit {
-    width: 6%;
+textarea.post-message {
+    width: 80%;
+    height: 150px;
+    font-size: large;
+    border: 1px solid #2b2b2c;
+    border-radius: 5px;
+    padding: 3px;
 }
 
-.tg .tg-col-del {
-    width: 6%;
+.post-data {
+    margin: 0;
+    padding: 0;
+    font-style: italic;
 }
 
-.tg th {
-    border: 1px solid #b3adad;
-    padding:5px;
-    background-color:#b9c9fe;
-    color:#039;
-    font-family:Arial,
-    sans-serif;
-    font-size:14px;
-    font-weight:normal;
+.post-message {
+    margin: 0;
+    padding: 10px 0 10px;
+    font-size: large;
 }
 
-.tg td {
-    border: 1px solid #b3adad;
-    text-align: left;
-    padding:5px;
-    background-color:#e8edff;
-    color:#669;
-    font-family:Arial, sans-serif;
-    font-size:14px;
+p.post-message1 {
+    padding: 5px 0 5px 0;
+    margin: 1px;
+    border-style: solid;
+    border-color: #fdfdfe;
+    border-width: 1px 0 10px 0;
+    font-size: large;
 }
 
-.tg .tg-hd-attr {
+div.post-message1 {
+    margin-top: 5px;
+    padding: 2px;
+}
+
+.comment-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0 10px 0 40px;
+}
+
+.comment-box {
+    margin: 5px auto 0 auto;
+    background-color: #666;
+    color: antiquewhite;
+    border-radius: 5px;
+    width: 90%;
+    padding: 20px;
+    border: 2px solid black;
+}
+
+.comment-box p {
+    margin-left: 40px;
+}
+
+.comment-box-flex {
+    display: flex;
+    margin: 5px auto 0 auto;
+    background-color: #666;
+    color: antiquewhite;
+    border-radius: 5px;
+    width: 90%;
+    padding: 20px;
+    border: 2px solid black;
+}
+
+/* Basic button styling */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #1f6464;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
     text-align: center;
-    top: -1px;
-    vertical-align: center;
-    will-change: transform
 }
 
-.tg .tg-row1-attr {
-    background-color: #D2E4FC;
-    text-align: left;
-    vertical-align: center
+.page-desc1 {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.tg .tg-row2-attr{
-    text-align:left;
-    vertical-align:center;
+.page-desc1 > h2 {
+    flex: 6;
 }
 
-@media screen and (max-width: 767px) {
-    .tg {
-        width: auto !important;
-    }
-    .tg col {
-        width: auto !important;
-    }
-    .tg-wrap {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        margin: auto 0px;
-    }
+.page-desc1 > .button {
+    flex: 1;
+}
+
+.hr-page {
+    width: 85%;
+}
+
+.page-desc1 .button.push-left-btn {
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+/*a.button.push-left-btn {*/
+/*    display: flex;*/
+/*    margin-left: auto;*/
+/*    margin-right: 10px;*/
+/*}*/
+
+.show-like {
+    display: flex;
+    align-items: center
+}
+
+div.push-left-like {
+    display: flex;
+    margin-left: auto;
+    margin-right: 10px;
+    align-items: center;
+}
+
+p.push-left-like {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.post-desc1 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.post-desc1 > h2 {
+    flex: 6;
+}
+
+.post-desc1 > .button {
+    flex: 1;
+}
+
+.is-invalid {
+    color: red;
+}
+
+input[type=text].like-user-name {
+    margin: 5px 0 10px 0;
+    font-size: larger;
 }

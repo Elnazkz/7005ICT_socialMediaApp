@@ -9,21 +9,25 @@
 </head>
 <body>
 <div id="main_title">
-    <p>Social Media</p>
+    <p>IdeaZone Hub</p>
 </div>
 <nav class="skew-menu">
     <ul>
         <li><a href="{{ url('/') }}">Home</a></li>
-        <li><a href="{{ url('posts') }}">Posts</a></li>
         <li><a href="{{ url('users') }}">Users</a></li>
         <li><a href="{{ url('about') }}">About</a></li>
     </ul>
 </nav>
 
+<br>
 @yield('body')
 
-<div id="footer">
+@section('footer')
+    @include('footer')
+@show
 
-</div>
+{{--https://stackoverflow.com/questions/42689580/exclude-certain-part-using-layout-of-laravel--}}
+{{--not showing footer in specific pages in my case About--}}
+
 </body>
 </html>
