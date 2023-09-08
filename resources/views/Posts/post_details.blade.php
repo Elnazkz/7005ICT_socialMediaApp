@@ -57,7 +57,7 @@
 
                     {{--                if the subcomments are not empty then will add the subcomment to the page--}}
                     @if (count(\App\utils\CommentController::sub_comments($parentComment->postId, $parentComment->cid)))
-                        @include('Comments\sub_comment_list', ['sub_comments' => \App\utils\CommentController::sub_comments($parentComment->postId, $parentComment->cid)])
+                        @include('Comments\sub_comment', ['sub_comments' => \App\utils\CommentController::sub_comments($parentComment->postId, $parentComment->cid)])
                     @endif
                 </details>
             @else
