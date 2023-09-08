@@ -82,19 +82,19 @@ a {
     color: black;
 }
 
-.post-list {
+.data-list {
     width: 80%;
     margin: 0 auto;
     padding: 0;
 }
 
-.post-box {
+.card-box {
     margin: 0 auto 10px;
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     width: 90%;
-    padding: 0 20px 0;
+    padding: 20px;
 }
 
 .post-like {
@@ -153,16 +153,10 @@ textarea.post-message {
     padding: 3px;
 }
 
-.post-date {
-    margin: 0;
-    padding: 0;
-}
-
-.post-author {
+.post-data {
     margin: 0;
     padding: 0;
     font-style: italic;
-    font-size: large;
 }
 
 .post-message {
@@ -183,7 +177,6 @@ p.post-message1 {
 div.post-message1 {
     margin-top: 5px;
     padding: 2px;
-    border: 2px groove #b6b6b6;
 }
 
 .comment-list {
@@ -259,11 +252,11 @@ div.post-message1 {
     margin-right: 10px;
 }
 
-a.button.push-left-btn {
-    display: flex;
-    margin-left: auto;
-    margin-right: 10px;
-}
+/*a.button.push-left-btn {*/
+/*    display: flex;*/
+/*    margin-left: auto;*/
+/*    margin-right: 10px;*/
+/*}*/
 
 .show-like {
     display: flex;
@@ -284,10 +277,8 @@ p.push-left-like {
 
 .post-desc1 {
     width: 100%;
-    margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
 }
 
 .post-desc1 > h2 {
@@ -299,7 +290,7 @@ p.push-left-like {
 }
 
 .is-invalid {
-    background: red;
+    color: red;
 }
 
 input[type=text].like-user-name {

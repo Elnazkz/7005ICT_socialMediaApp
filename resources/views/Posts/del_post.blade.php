@@ -13,8 +13,8 @@
     <hr class="hr-page">
     @yield('body')
 
-    <div class="post-list">
-        <div class="post-box">
+    <div class="data-list">
+        <div class="card-box">
             <br>
             <h2>Deleting post "{{ $post->title }}", author {{ $post->name }}.</h2>
             <br>

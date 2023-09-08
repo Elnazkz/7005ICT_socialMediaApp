@@ -10,10 +10,11 @@
     </div>
     <hr class="hr-page">
 
-    <div class="post-list">
+    <div class="data-list">
         @forelse($users as $user)
-            <div class="post-box">
+            <div class="card-box">
                 <span><h2 class="post-title"><a href="{{ url('posts/' . $user->id) }}">{{ $user->name }}</a></h2></span>
+                <br>
                 <span>No of Posts: {{ \App\utils\MyUserController::count_user_posts($user->id) }}</span>
             </div>
         @empty

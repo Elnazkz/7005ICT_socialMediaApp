@@ -12,40 +12,40 @@
     </div>
     <hr class="hr-page">
 
-    <div class="post-list">
-        <div class="post-box">
+    <div class="data-list">
+        <div class="card-box">
             <div class="post-desc1">
                 <h2>{{ $post->title }}</h2>
-                <a class="button" href="{{ url('comments/create') }}/{{ $post->id }}">Reply</a>
+                <a class="button" href="{{ url('comments/showCreate') }}/{{ $post->id }}">Reply</a>
             </div>
             <div class="show-like">
                 <div>
-                    <p class="post-date">Posted on: {{ $post->date }}</p>
-                    <p class="post-author">Author: {{ $user->name }}</p>
+                    <p class="post-data">Posted on: {{ $post->date }}</p>
+                    <p class="post-data">Author: {{ $user->name }}</p>
                 </div>
                 <div class="push-left-like">
-                    @php($cnt = \App\utils\LikeController::count($post->id))
-                    @if ($cnt == 0)
+                    {{--                    @php($cnt = \App\utils\LikeController::count($post->id))--}}
+                    @if (\App\utils\LikeController::count($post->id) == 0)
                         <a href="{{ url('/likes/check_like/' . $post->id) }}">
                             <img src="{{ url('images/not_liked.png') }}">
                         </a>
                     @else
-                        <p class="push-left-like">{{ $cnt }}</p>
+                        <p class="push-left-like">{{ \App\utils\LikeController::count($post->id) }}</p>
                         <a href="{{ url('likes/check_like/' . $post->id) }}">
                             <img src="{{ url('images/liked.png') }}">
                         </a>
                     @endif
                 </div>
+                <br>
             </div>
-            <div class="post-message1"><p class="post-message1">{!! nl2br($post->message) !!}</p></div>
+            <br>
+            <div class="post-message1"><p class="post-message1">{!! nl2br(e($post->message)) !!}</p></div>
         </div>
 
         {{-- will loop through the parent comments which are the comments for the post, not a reply to a comment--}}
         @foreach($parentComments as $parentComment)
             {{--                this will get the subcomments for this comment--}}
-            @php($sc = \App\utils\CommentController::sub_comments($parentComment->postId, $parentComment->cid))
-
-            @if (count($sc))
+            @if (count(\App\utils\CommentController::sub_comments($parentComment->postId, $parentComment->cid)))
                 <details class="comment-box">
                     <summary>
                         <span>{{ $parentComment->message}}</span>,
@@ -56,8 +56,8 @@
                     </summary>
 
                     {{--                if the subcomments are not empty then will add the subcomment to the page--}}
-                    @if (count($sc))
-                        @include('Comments\sub_comment_list', ['sub_comments' => $sc])
+                    @if (count(\App\utils\CommentController::sub_comments($parentComment->postId, $parentComment->cid)))
+                        @include('Comments\sub_comment_list', ['sub_comments' => \App\utils\CommentController::sub_comments($parentComment->postId, $parentComment->cid)])
                     @endif
                 </details>
             @else

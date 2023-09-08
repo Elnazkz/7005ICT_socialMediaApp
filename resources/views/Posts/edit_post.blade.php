@@ -11,8 +11,10 @@
 
 @section('body')
     <form action="{{ url('post_edit') }}" method="post">
-        <input type="hidden" name="pid" value="{{ $post->pid }}" >
-        <input type="hidden" name="uid" value="{{ $post->uid }}" >
+        @csrf
+
+        <input type="hidden" name="pid" value="{{ $post->pid }}">
+        <input type="hidden" name="uid" value="{{ $post->uid }}">
         <input type="hidden" name="name" value="{{ $post->name }}">
 
         <div class="page-desc1">
@@ -22,24 +24,14 @@
         </div>
         <hr class="hr-page">
 
-        <div class="post-list">
-            @csrf
+        <div class="data-list">
 
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
-
-            <div class="post-box">
+            <div class="card-box">
                 <div><label class="post-title" for="post_title">Post Title</label></div>
-                <div><input class="post-title" type="text" id="post_title" name="title" value="{{ $post->title }}"></div>
+                <div><input class="post-title" type="text" id="post_title" name="title" value="{{ $post->title }}">
+                </div>
                 @error('title')
-                <div class="">{{$message}}</div>
+                <div class="is-invalid">{{$message}}</div>
                 @enderror
                 <br>
 
@@ -47,7 +39,7 @@
                 <div>
                     <textarea class="post-message" id="post_message" name="message">{{ $post->message }}</textarea>
                     @error('message')
-                    <div class="alert alert-danger">{{$message}}</div>
+                    <div class="is-invalid">{{$message}}</div>
                     @enderror
                 </div>
             </div>

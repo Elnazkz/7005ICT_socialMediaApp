@@ -10,11 +10,12 @@
     </div>
     <hr class="hr-page">
 
-    <div class="post-list">
+    <div class="data-list">
         @forelse($posts as $post)
-            <div class="post-box">
+            <div class="card-box">
                 <div>
-                    <h2><a href="{{ url('/post_details/' . $post->pid) }}">{{ $post->title }}</a></h2>
+                    <h2 class="post-title"><a href="{{ url('/post_details/' . $post->pid) }}">{{ $post->title }}</a>
+                    </h2>
                 </div>
                 <p>Posted on: {{ $post->date }}</p>
                 <p>{{ $post->message }}</p>

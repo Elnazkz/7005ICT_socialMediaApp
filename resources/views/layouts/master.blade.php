@@ -9,7 +9,7 @@
 </head>
 <body>
 <div id="main_title">
-    <p>Social Media</p>
+    <p>IdeaZone Hub</p>
 </div>
 <nav class="skew-menu">
     <ul>
@@ -19,6 +19,7 @@
     </ul>
 </nav>
 
+<br>
 @yield('body')
 
 <div id="footer">
