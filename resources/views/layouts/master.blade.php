@@ -22,8 +22,12 @@
 <br>
 @yield('body')
 
-<div id="footer">
+@section('footer')
+    @include('footer')
+@show
 
-</div>
+{{--https://stackoverflow.com/questions/42689580/exclude-certain-part-using-layout-of-laravel--}}
+{{--not showing footer in specific pages in my case About--}}
+
 </body>
 </html>
