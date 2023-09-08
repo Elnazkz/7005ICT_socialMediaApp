@@ -12,12 +12,14 @@ class Helpers
 
     /**
      * @param $input
-     * @return string
+     * @return string|null
      * helper function to do sanitizations
      * escape html characters and escape shell commands
      */
-    public static function security_checks($input): string
+    public static function security_checks($input): ?string
     {
+        if ($input == null)
+            return null;
         return escapeshellcmd(htmlspecialchars($input));
     }
 
@@ -61,7 +63,6 @@ class Helpers
                         break;
                     }
                 } else if (self::starts_with('alpha', $rule)) {
-                    //if (!ctype_alpha(str_replace(' ', '', $fld))) {
                     if (ctype_alpha(str_replace(' ', '', $fld)) === false) {
                         $ret_val[$field_name] = $field_name . ' must be all characters.';
                         break;

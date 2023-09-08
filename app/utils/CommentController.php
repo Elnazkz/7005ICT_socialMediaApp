@@ -47,7 +47,7 @@ class CommentController
     {
         // The validation rules are set here and checked on the post variables
         $res = Helpers::make_validation([
-            'user_name' => 'required|min:4',
+            'user_name' => 'required|min:4|alpha',
             'message' => 'required|words:5'
         ]);
 
