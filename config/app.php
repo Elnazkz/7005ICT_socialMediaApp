@@ -185,4 +185,5 @@ return [
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
 
+    'Helpers' => \App\Helpers\Helpers::class,
 ];
