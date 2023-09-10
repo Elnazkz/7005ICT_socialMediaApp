@@ -20,7 +20,12 @@ class Helpers
     {
         if ($input == null)
             return null;
-        return escapeshellcmd(htmlspecialchars($input));
+
+//        // Escaping shell command
+        $escapedInput = escapeshellcmd($input);
+
+        // Escaping HTML special characters
+        return htmlspecialchars($escapedInput);
     }
 
     /**
